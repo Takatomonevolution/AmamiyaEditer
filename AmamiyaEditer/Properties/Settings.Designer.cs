@@ -8,22 +8,102 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AmamiyaEditer.Properties
-{
-
-
+namespace AmamiyaEditer.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("153, 180, 203")]
+        public global::System.Drawing.Color _backcolor {
+            get {
+                return ((global::System.Drawing.Color)(this["_backcolor"]));
+            }
+            set {
+                this["_backcolor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("191, 205, 219")]
+        public global::System.Drawing.Color _textboxcolor {
+            get {
+                return ((global::System.Drawing.Color)(this["_textboxcolor"]));
+            }
+            set {
+                this["_textboxcolor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color _forecolor {
+            get {
+                return ((global::System.Drawing.Color)(this["_forecolor"]));
+            }
+            set {
+                this["_forecolor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft YaHei, 42pt")]
+        public global::System.Drawing.Font _font {
+            get {
+                return ((global::System.Drawing.Font)(this["_font"]));
+            }
+            set {
+                this["_font"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("863, 599")]
+        public global::System.Drawing.Size _size {
+            get {
+                return ((global::System.Drawing.Size)(this["_size"]));
+            }
+            set {
+                this["_size"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool _istextforce {
+            get {
+                return ((bool)(this["_istextforce"]));
+            }
+            set {
+                this["_istextforce"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100")]
+        public global::System.Drawing.Point _location {
+            get {
+                return ((global::System.Drawing.Point)(this["_location"]));
+            }
+            set {
+                this["_location"] = value;
             }
         }
     }
