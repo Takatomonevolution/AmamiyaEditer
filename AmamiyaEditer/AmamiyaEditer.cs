@@ -54,6 +54,7 @@ namespace AmamiyaEditer
                     "Tag Image File Format (*.tif)|*.tif;*.tiff";
             dt1970 = new DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.BackColor = Properties.Settings.Default._backcolor;
+            txtTitle.BackColor = Properties.Settings.Default._backcolor;
             this.Size = Properties.Settings.Default._size;
             txtTalk.Font = Properties.Settings.Default._font;
             txtTalk.ForeColor = Properties.Settings.Default._forecolor;
@@ -182,6 +183,7 @@ namespace AmamiyaEditer
             {
                 Color color = colorDia.Color;
                 BackColor = color;
+                txtTitle.BackColor = color;
                 Properties.Settings.Default._backcolor = color;
                 Properties.Settings.Default.Save();
             }
@@ -229,23 +231,13 @@ namespace AmamiyaEditer
             txtTalk.ForeColor = Color.Black;
             txtTalk.Font = new Font("Microsoft YaHei", 42);
             BackColor = Color.FromArgb(153, 180, 203);
+            txtTitle.BackColor = Color.FromArgb(153, 180, 203);
             txtTalk.BackColor = Color.FromArgb(191, 205, 219);
             Properties.Settings.Default._forecolor = Color.Black;
             Properties.Settings.Default._font = new Font("Microsoft YaHei", 42);
             Properties.Settings.Default._backcolor = Color.FromArgb(153, 180, 203);
             Properties.Settings.Default._textboxcolor = Color.FromArgb(191, 205, 219);
             Properties.Settings.Default.Save();
-        }
-
-        private void textBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-            /*
-            if(isMouseDown)
-            {
-                this.Cursor = Cursors.SizeAll;
-                Location = new Point(Location.X + (e.X - p.X), Location.Y + (e.Y - p.Y));
-            }
-            */
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
