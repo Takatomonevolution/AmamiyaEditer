@@ -15,6 +15,7 @@ namespace AmamiyaEditer
         private bool isShowNowLbl = true;
         private bool isShowLiveLbl = true;
         private bool isEdge = false;
+        private string imageFilter;
 
         private TimeSpan nowTS;
         private TimeSpan openTS;
@@ -44,6 +45,13 @@ namespace AmamiyaEditer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            imageFilter = "All Image Files|*.bmp;*.ico;*.gif;*.jpeg;*.jpg;*.png;*.tif;*.tiff|" + 
+                    "Windows Bitmap(*.bmp)|*.bmp|" + 
+                    "Windows Icon(*.ico)|*.ico|" + 
+                    "Graphics Interchange Format (*.gif)|(*.gif)|" + 
+                    "JPEG File Interchange Format (*.jpg)|*.jpg;*.jpeg|" + 
+                    "Portable Network Graphics (*.png)|*.png|" + 
+                    "Tag Image File Format (*.tif)|*.tif;*.tiff";
             dt1970 = new DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.BackColor = Properties.Settings.Default._backcolor;
             this.Size = Properties.Settings.Default._size;
@@ -149,7 +157,7 @@ namespace AmamiyaEditer
 
         private void label3_MouseEnter(object sender, EventArgs e)
         {
-            lblClose.BackColor = Color.Tomato;
+            lblClose.BackColor = Color.Coral;
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
@@ -159,7 +167,7 @@ namespace AmamiyaEditer
 
         private void label2_MouseEnter(object sender, EventArgs e)
         {
-            lblMin.BackColor = Color.Aqua;
+            lblMin.BackColor = Color.LightSteelBlue;
         }
 
         private void label2_MouseLeave(object sender, EventArgs e)
@@ -266,19 +274,23 @@ namespace AmamiyaEditer
 
         private void txtTalk_KeyUp(object sender, KeyEventArgs e)
         {
-            /*
-            if(e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyCode == Keys.A)
             {
-                speekText = txtTalk.Lines[txtTalk.Lines.GetUpperBound(0) - 1].ToString();
-                //MessageBox.Show(speekText);
-                if(!speekText.Trim().Equals(string.Empty))
-                {
-                    Execute();
-                }
-                //lblTitle.Text = speekText;
+                txtTalk.SelectAll();
             }
-            */
-        }
+                /*
+                if(e.KeyCode == Keys.Enter)
+                {
+                    speekText = txtTalk.Lines[txtTalk.Lines.GetUpperBound(0) - 1].ToString();
+                    //MessageBox.Show(speekText);
+                    if(!speekText.Trim().Equals(string.Empty))
+                    {
+                        Execute();
+                    }
+                    //lblTitle.Text = speekText;
+                }
+                */
+            }
 
         public string Execute()
         {
@@ -467,6 +479,34 @@ namespace AmamiyaEditer
         private void lblLiveColor_DoubleClick(object sender, EventArgs e)
         {
             lblLiveTime_DoubleClick(sender, e);
+        }
+
+        private void lblTitle_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picAvatar_DoubleClick(object sender, EventArgs e)
+        {
+            OpenFileDialog ofDialog = new OpenFileDialog();
+            ofDialog.InitialDirectory = "C:\\";
+            ofDialog.RestoreDirectory = false;
+            ofDialog.Filter = imageFilter;
+            if (ofDialog.ShowDialog() == DialogResult.OK)
+            {
+                string imgPath = System.IO.Path.GetFullPath(ofDialog.FileName);
+                picAvatar.Image = Image.FromFile(imgPath);
+            }
+        }
+
+        private void txtTitle_DoubleClick(object sender, EventArgs e)
+        {
+            txtTitle.ReadOnly = false;
+        }
+
+        private void txtTitle_LostFocus(object sender, EventArgs e)
+        {
+            txtTitle.ReadOnly = true;
         }
     }
 

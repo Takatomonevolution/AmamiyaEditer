@@ -46,6 +46,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblLiveTime = new System.Windows.Forms.Label();
             this.lblLiveColor = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.picAvatar = new AmamiyaEditer.MyForms.MyPictureBox();
             this.Setting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
@@ -57,6 +58,7 @@
             this.lblMin.AutoSize = true;
             this.lblMin.BackColor = System.Drawing.Color.Transparent;
             this.lblMin.Font = new System.Drawing.Font("SimSun", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblMin.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblMin.Location = new System.Drawing.Point(746, 13);
             this.lblMin.Name = "lblMin";
             this.lblMin.Size = new System.Drawing.Size(49, 34);
@@ -70,15 +72,14 @@
             // lblClose
             // 
             this.lblClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblClose.AutoSize = true;
             this.lblClose.BackColor = System.Drawing.Color.Transparent;
             this.lblClose.Font = new System.Drawing.Font("SimSun", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblClose.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblClose.Location = new System.Drawing.Point(801, 13);
             this.lblClose.Name = "lblClose";
-            this.lblClose.Size = new System.Drawing.Size(49, 34);
+            this.lblClose.Size = new System.Drawing.Size(45, 34);
             this.lblClose.TabIndex = 4;
             this.lblClose.Text = "×";
-            this.lblClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblClose.Click += new System.EventHandler(this.label3_Click);
             this.lblClose.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
             this.lblClose.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
@@ -158,9 +159,7 @@
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "希姐说";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
-            this.lblTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
-            this.lblTitle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label1_MouseUp);
+            this.lblTitle.Visible = false;
             // 
             // txtTalk
             // 
@@ -178,6 +177,7 @@
             this.txtTalk.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtTalk.Size = new System.Drawing.Size(839, 483);
             this.txtTalk.TabIndex = 0;
+            this.txtTalk.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTalk_KeyUp);
             // 
             // lblNowTime
             // 
@@ -226,16 +226,35 @@
             this.lblLiveColor.Visible = false;
             this.lblLiveColor.DoubleClick += new System.EventHandler(this.lblLiveColor_DoubleClick);
             // 
+            // txtTitle
+            // 
+            this.txtTitle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTitle.Font = new System.Drawing.Font("Microsoft YaHei", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtTitle.ForeColor = System.Drawing.Color.Transparent;
+            this.txtTitle.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txtTitle.Location = new System.Drawing.Point(278, 6);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.ReadOnly = true;
+            this.txtTitle.Size = new System.Drawing.Size(306, 44);
+            this.txtTitle.TabIndex = 8;
+            this.txtTitle.Text = "希姐说";
+            this.txtTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTitle.DoubleClick += new System.EventHandler(this.txtTitle_DoubleClick);
+            this.txtTitle.LostFocus += new System.EventHandler(this.txtTitle_LostFocus);
+            // 
             // picAvatar
             // 
             this.picAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.picAvatar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picAvatar.BackgroundImage")));
             this.picAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picAvatar.Image = global::AmamiyaEditer.Properties.Resources.tou;
             this.picAvatar.Location = new System.Drawing.Point(695, 403);
             this.picAvatar.Name = "picAvatar";
             this.picAvatar.Size = new System.Drawing.Size(128, 128);
+            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAvatar.TabIndex = 5;
             this.picAvatar.TabStop = false;
+            this.picAvatar.DoubleClick += new System.EventHandler(this.picAvatar_DoubleClick);
             // 
             // frmAmamiyaTalk
             // 
@@ -243,6 +262,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(863, 599);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.lblLiveColor);
             this.Controls.Add(this.picAvatar);
             this.Controls.Add(this.lblTitle);
@@ -288,6 +308,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblLiveTime;
         private System.Windows.Forms.Label lblLiveColor;
+        private System.Windows.Forms.TextBox txtTitle;
     }
 }
 
