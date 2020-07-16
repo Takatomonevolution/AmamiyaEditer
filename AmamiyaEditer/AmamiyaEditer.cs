@@ -386,6 +386,8 @@ namespace AmamiyaEditer
                 lblLiveTime.Text = "";
                 lblLiveColor.Visible = true;
             }
+
+            showLblLive();
         }
 
         private string timeFormat(int data)
@@ -396,7 +398,7 @@ namespace AmamiyaEditer
         private void lblLiveTime_DoubleClick(object sender, EventArgs e)
         {
             isShowLiveLbl = !isShowLiveLbl;
-            showLblLive();
+            //showLblLive();
             showLblTime();
         }
 
@@ -449,23 +451,25 @@ namespace AmamiyaEditer
 
         private void showLblLive()
         {
-            nowTS = DateTime.Now - dt1970;
-            timeDifference = Convert.ToInt32(nowTS.TotalMinutes - openTS.TotalMinutes);
             if (timeDifference / 60 >= 4)
+            //if (timeDifference >= 2)
             {
                 lblLiveTime.ForeColor = Color.Pink;
                 lblLiveColor.BackColor = Color.Pink;
             }
             else if (timeDifference / 60 < 2)
+            //else if (timeDifference < 1)
             {
                 lblLiveTime.ForeColor = Color.Transparent;
                 lblLiveColor.BackColor = Color.White;
             }
             else if (timeDifference / 60 >= 2)
+            //else if (timeDifference >= 1)
             {
                 lblLiveTime.ForeColor = Color.Khaki;
                 lblLiveColor.BackColor = Color.Khaki;
             }
+            //txtTitle.Text = (timeDifference).ToString();
         }
 
         private void lblLiveColor_DoubleClick(object sender, EventArgs e)

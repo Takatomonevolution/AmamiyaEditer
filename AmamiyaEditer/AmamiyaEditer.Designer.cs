@@ -228,6 +228,8 @@
             // 
             // txtTitle
             // 
+            this.txtTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTitle.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTitle.Font = new System.Drawing.Font("Microsoft YaHei", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -262,9 +264,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(863, 599);
+            this.Controls.Add(this.picAvatar);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.lblLiveColor);
-            this.Controls.Add(this.picAvatar);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblNowTime);
             this.Controls.Add(this.lblLiveTime);
